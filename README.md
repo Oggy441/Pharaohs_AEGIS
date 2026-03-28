@@ -1,6 +1,7 @@
 # AEGIS Cyber-Infrastructure Defense Dashboard
 
 A specialized operational interface designed to detect the notorious "Shadow Controller" cyber-attack spreading throughout Nexus City's infrastructure. It tracks thousands of network requests, dynamically exposes latent sleeper nodes, visualizes high-latency attack vectors, and yields tactical intelligence reports.
+![aegis nexus city](./aegis-dashboard/public/AEGIS.png)
 
 ## Getting Started
 
