@@ -279,30 +279,63 @@ body {
 }
 
 @media print {
-  body {
+  /* Reset page background */
+  html, body {
     background: #ffffff !important;
     color: #000000 !important;
-  }
-
-  body * {
-    visibility: hidden;
-  }
-
-  .print-area,
-  .print-area * {
-    visibility: visible;
-  }
-
-  .print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    margin: 0 !important;
-    padding: 2cm !important;
-    font-size: 11pt !important;
-    color: #000000 !important;
-    background: #ffffff !important;
     overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Remove grid layout so content flows naturally */
+  .layout {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide all dashboard chrome */
+  .header,
+  .sidebar,
+  .alert-banner,
+  .scanline-overlay,
+  .btn-control,
+  .panel-header {
+    display: none !important;
+  }
+
+  /* Let main content fill the page */
+  .main-content {
+    padding: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Style the report for clean printing */
+  .print-area {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1cm !important;
+    font-family: "Courier New", Courier, monospace !important;
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    white-space: pre-wrap !important;
+    overflow: visible !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Remove any parent containers that might clip */
+  .fade-in,
+  .flex-panel,
+  .panel {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 }
