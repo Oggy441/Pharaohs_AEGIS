@@ -1,4 +1,4 @@
-# 🛡️ AEGIS — Cyber-Infrastructure Defense Dashboard
+# AEGIS — Cyber-Infrastructure Defense Dashboard
 
 > **Nexus City Hackathon** · Round 1: Shadow Controller Detection · Round 2: Autonomous Incident Response
 
@@ -6,13 +6,13 @@
 
 ---
 
-## 🎯 Mission
+## Mission
 
 AEGIS is a full-spectrum cyber defense platform for Nexus City's infrastructure. It combines **forensic threat detection** (Round 1) with **ML-powered autonomous incident response** (Round 2) to detect, evaluate, and quarantine compromised nodes in real-time.
 
 ---
 
-## 📊 Round 1 — Shadow Controller Detection
+## Round 1 — Shadow Controller Detection
 
 The forensic analysis dashboard exposes the "Shadow Controller" hiding behind deceptive telemetry:
 
@@ -29,7 +29,7 @@ The forensic analysis dashboard exposes the "Shadow Controller" hiding behind de
 
 ---
 
-## 🤖 Round 2 — Autonomous Incident Response
+## Round 2 — Autonomous Incident Response
 
 A **self-governing defense mechanism** powered by machine learning:
 
@@ -53,7 +53,7 @@ A **self-governing defense mechanism** powered by machine learning:
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Data Pipeline (if regenerating data)
 ```bash
@@ -76,7 +76,7 @@ Open `http://localhost:5173` → Navigate to **"Auto Response"** in the sidebar 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -88,7 +88,7 @@ Open `http://localhost:5173` → Navigate to **"Auto Response"** in the sidebar 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Pharaohs_AEGIS/
@@ -128,7 +128,7 @@ Pharaohs_AEGIS/
 
 ---
 
-## 👥 Team
+## Team
 
 - **Team Name**: Pharaohs
 - **Members**: _Ritvik Singh_ [Team Leader], _Aaditya Gupta_, _Neeraj_, _Mohammad Rehan Ansari_
