@@ -7,6 +7,7 @@ import SleeperHeatmapPage from "./pages/SleeperHeatmapPage";
 import ThreatIntel from "./pages/ThreatIntel";
 import SchemaMonitor from "./pages/SchemaMonitor";
 import Report from "./pages/Report";
+import AutonomousResponse from "./pages/AutonomousResponse";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/threats" element={<ThreatIntel />} />
           <Route path="/schema" element={<SchemaMonitor />} />
           <Route path="/report" element={<Report />} />
+          <Route path="/response" element={<AutonomousResponse />} />
         </Routes>
       </Layout>
     </DataProvider>

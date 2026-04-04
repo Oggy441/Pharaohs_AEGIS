@@ -1,0 +1,66 @@
+{
+  "source": "NSL-KDD 2009 \u2014 real network intrusion dataset",
+  "model": "Random Forest (200 trees, depth 10)",
+  "accuracy": 70.81,
+  "feature_importances": {
+    "latency_jitter": 0.0217,
+    "http_risk": 0.5895,
+    "request_freq": 0.3888
+  },
+  "thresholds": {
+    "latency_jitter": {
+      "safe": [
+        0,
+        5.0
+      ],
+      "warning": [
+        5.0,
+        null
+      ],
+      "critical": [
+        null,
+        500
+      ]
+    },
+    "http_risk": {
+      "safe": 0,
+      "low": 1,
+      "high": 2,
+      "critical": 3
+    },
+    "request_freq": {
+      "safe": [
+        0,
+        45.8
+      ],
+      "warning": [
+        45.8,
+        null
+      ],
+      "critical": [
+        null,
+        120
+      ]
+    }
+  },
+  "score_weights": {
+    "latency_jitter": {
+      "safe": 0,
+      "warning": 0.5,
+      "critical": 1.1
+    },
+    "http_risk": {
+      "0": 0,
+      "1": 8.8,
+      "2": 17.7,
+      "3": 29.5
+    },
+    "request_freq": {
+      "safe": 0,
+      "warning": 9.7,
+      "critical": 19.4
+    }
+  },
+  "quarantine_threshold": 75,
+  "note": "Thresholds and weights derived from real NSL-KDD attack data, not hardcoded."
+}

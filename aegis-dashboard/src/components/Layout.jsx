@@ -5,6 +5,7 @@ import "./Layout.css";
 
 const NAV_ITEMS = [
   { path: "/", label: "Dashboard", icon: "GRID", shortcut: "D" },
+  { path: "/response", label: "Auto Response", icon: "SHLD", shortcut: "A" },
   { path: "/nodes", label: "Node Explorer", icon: "NODE", shortcut: "N" },
   { path: "/heatmap", label: "Sleeper Heatmap", icon: "HEAT", shortcut: "H" },
   { path: "/threats", label: "Threat Intel", icon: "LOCK", shortcut: "T" },

@@ -1,0 +1,174 @@
+/* ===================================================
+   Autonomous Response Page — Round 2
+   =================================================== */
+
+/* Stats bar */
+.ar-stats-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+  flex-wrap: wrap;
+}
+
+.ar-defcon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+}
+
+.defcon-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.ar-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 8px 14px;
+}
+
+.ar-stat-val {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.ar-controls {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+/* Main grid */
+.ar-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--gap);
+}
+
+.ar-left, .ar-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Node grid */
+.ar-node-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+/* Node cards */
+.node-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 12px;
+  transition: all 0.5s ease;
+}
+
+.node-card.threat-pulse {
+  animation: threatPulse 1.4s ease-in-out infinite;
+}
+
+.node-card.warn-pulse {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.node-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+/* Badge reuse */
+.badge {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.bg-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-muted); }
+.bg-yellow { background: var(--yellow-muted); color: var(--yellow); border: 1px solid var(--yellow-muted); }
+.bg-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-muted); }
+.bg-dim { background: var(--bg-hover); color: var(--text-dim); }
+
+/* Timeline */
+.ar-timeline-scroll {
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ar-event {
+  display: flex;
+  gap: 8px;
+  padding: 6px 10px;
+  border-left: 2px solid;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.02);
+}
+
+/* Quarantine log */
+.ar-qlog-scroll {
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ar-qlog-item {
+  background: var(--red-bg);
+  border: 1px solid var(--red-muted);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+/* Export button */
+.ar-export-btn {
+  width: 100%;
+  padding: 10px 0 !important;
+  color: var(--purple) !important;
+  border-color: var(--purple-muted) !important;
+  font-family: var(--font-display) !important;
+  letter-spacing: 2px;
+  font-size: 0.95rem !important;
+}
+
+/* Topology animation */
+@keyframes dataFlow {
+  0% { stroke-dashoffset: 16; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .ar-grid { grid-template-columns: 1fr; }
+  .ar-node-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .ar-stats-bar { flex-direction: column; align-items: stretch; }
+  .ar-node-grid { grid-template-columns: 1fr; }
+}
