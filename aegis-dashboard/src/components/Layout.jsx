@@ -124,7 +124,6 @@ export default function Layout({ children }) {
             >
               <span className="nav-icon">{item.icon}</span>
               <span className="nav-label">{item.label}</span>
-              <span className="nav-shortcut">{item.shortcut}</span>
             </NavLink>
           ))}
         </div>
