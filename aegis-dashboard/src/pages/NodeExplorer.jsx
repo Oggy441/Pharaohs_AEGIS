@@ -13,7 +13,7 @@ export default function NodeExplorer() {
 
   if (!data) return null;
 
-  let nodes = data.nodes;
+  let nodes = [...data.nodes];
   if (filter) {
     const q = filter.toLowerCase();
     nodes = nodes.filter(
