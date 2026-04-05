@@ -19,6 +19,7 @@ export default function Layout({ children }) {
   const [theme, setTheme] = useState("dark");
   const [uptime, setUptime] = useState(0);
   const [rotation, setRotation] = useState(600);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -42,10 +43,17 @@ export default function Layout({ children }) {
   const summary = data?.summary || {};
 
   return (
-    <div className="layout">
+    <div className={`layout ${isCollapsed ? 'collapsed' : ''}`}>
       {/* Header */}
       <header className="header">
         <div className="header-left">
+          <button 
+            className="btn-control toggle-sidebar-btn" 
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            title="Toggle Sidebar"
+          >
+            {isCollapsed ? '►' : '◄'}
+          </button>
           <div className="aegis-logo">
             <span className="logo-bracket">[</span>
             <span className="logo-text">AEGIS ACTIVE</span>

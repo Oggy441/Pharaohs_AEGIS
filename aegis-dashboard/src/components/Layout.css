@@ -9,6 +9,11 @@
     "sidebar main";
   height: 100vh;
   overflow: hidden;
+  transition: grid-template-columns 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.layout.collapsed {
+  grid-template-columns: 78px 1fr;
 }
 
 /* ─── Header ─────────────────────────────────── */
@@ -33,6 +38,34 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.toggle-sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.toggle-sidebar-btn:hover {
+  border-color: var(--yellow-dim);
+  color: var(--yellow);
+  background: var(--yellow-muted);
 }
 
 .logo-bracket {
@@ -143,6 +176,12 @@
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid var(--border-color);
+  transition: padding 0.3s;
+}
+
+.layout.collapsed .sidebar-brand {
+  padding: 20px 10px;
+  justify-content: center;
 }
 
 .brand-icon {
@@ -176,6 +215,31 @@
   display: block;
 }
 
+/* Smooth text hiding for collapsed state */
+.brand-text,
+.nav-label,
+.nav-section-label,
+.system-status span,
+.sidebar-stats {
+  transition: opacity 0.2s, max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 1;
+  max-width: 200px;
+}
+
+.layout.collapsed .brand-text,
+.layout.collapsed .nav-label,
+.layout.collapsed .nav-section-label,
+.layout.collapsed .system-status span,
+.layout.collapsed .sidebar-stats {
+  opacity: 0;
+  max-width: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
 .sidebar-nav {
   flex: 1;
   padding: 12px 8px;
@@ -201,6 +265,11 @@
   transition: all 0.2s;
   margin-bottom: 2px;
   position: relative;
+}
+
+.layout.collapsed .nav-item {
+  justify-content: center;
+  padding: 10px;
 }
 
 .nav-item:hover {
@@ -239,6 +308,11 @@
   border-radius: 4px;
   letter-spacing: 1px;
   flex-shrink: 0;
+  transition: margin 0.3s;
+}
+
+.layout.collapsed .nav-icon {
+  margin: 0;
 }
 
 .nav-item.active .nav-icon {
